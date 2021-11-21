@@ -5,9 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <title>Trabajos Javasctipy Master - Escalab</title>
+  <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  
-  <script src="./index,js"></script>
+  <h1>Consulta de Pokemones</h1>
+  <div>
+     <input id="inp-buscar" type="text" placeholder="Ingrese nombre pokemon">
+     <button id="btn-buscar">Buscar</button>
+     <br>
+     <br>
+     <pre id="consulta"></pre>
+     <pre id="loading" class="hidden">Loading...</pre>
+  </div>
+  <br><hr><br>
+  <h2>Historial de Consultas</h2>
+  <ul id="historial"></ul>
+  <button id="clean-historial">Limpiar Historial</button>
+  <script src="./index.js"></script>
 </body>
 </html>
