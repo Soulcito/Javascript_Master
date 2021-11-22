@@ -30,7 +30,7 @@ const pokeApi = async (pokemon) => {
     
     consulta.innerHTML = `<p style="color: blue">NUMERO DE POKEMON ${body.id}<p>`;    
     listaPokemon += `<li>pokemon: ${body.name} | numero: ${body.id}</li>`;
-    historial.innerHTML = listaPokemon,
+    historial.innerHTML = listaPokemon;
     localStorage.setItem('pokemon',listaPokemon);
 
   } catch (error) {    
