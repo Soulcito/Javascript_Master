@@ -21,12 +21,10 @@ const pokeApi = async (pokemon) => {
   try {
       
     preLoading.removeAttribute('class','hidden');
+    btnBuscar.setAttribute('disabled', true);
 
     const response = await fetch(`${URL}${pokemon}`);
-    const body     = await response.json();
-
-    
-    preLoading.setAttribute('class','hidden');
+    const body     = await response.json();  
     
     consulta.innerHTML = `<p style="color: blue">NUMERO DE POKEMON ${body.id}<p>`;    
     listaPokemon += `<li>pokemon: ${body.name} | numero: ${body.id}</li>`;
@@ -36,6 +34,8 @@ const pokeApi = async (pokemon) => {
   } catch (error) {    
     consulta.innerHTML = `<p style="color: red">${error}<p>`;
   } finally {
+    preLoading.setAttribute('class','hidden');
+    btnBuscar.removeAttribute('disabled');
     limpiar();    
   }
 }
